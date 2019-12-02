@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import { Text } from 'react-native';
+import { StatusBar } from 'react-native';
 
 import './config/ReactotronConfig';
 
@@ -18,6 +18,7 @@ function App() {
 
   return (
     <>
+      <StatusBar backgroundColor="#9A24D4" />
       <Routes />
     </>
   );

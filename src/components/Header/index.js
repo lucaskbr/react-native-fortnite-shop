@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
-// import { Container } from './styles';
+import logo from '../../assets/images/logo.png';
+
+import { Container, Logo } from './styles';
 
 class Header extends Component {
   render() {
-    return View;
+    return (
+      <Container>
+        <Logo source={logo} resizeMode="contain" />
+        <Icon name="shopping-basket" size={30} color="#fff" />
+      </Container>
+    );
   }
 }
 
