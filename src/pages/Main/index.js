@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useDispatch } from 'react-redux';
 
 import {
   Container,
@@ -18,12 +20,15 @@ import {
 
 import api from '../../services/api';
 
+import * as CartActions from '../../store/modules/cart/actions';
+
 /* static navigationOptions = {
     // headerTitle instead of title
     headerTitle: () => <Header />,
   }; */
 
 function Main() {
+  const dispatch = useDispatch();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -48,6 +53,11 @@ function Main() {
       default:
         return '#eee';
     }
+  }
+
+  function handleAddToCart(id) {
+    console.tron.log(`Add to cart -> ${id}`);
+    dispatch(CartActions.addToCart(id));
   }
 
   return (
@@ -75,8 +85,10 @@ function Main() {
                 </RarityBadge>
               </ProductInfo>
 
-              <ActionButton>
-                <ActionButtonText>Add to cart</ActionButtonText>
+              <ActionButton onPress={() => handleAddToCart(item.id)}>
+                <View accessible>
+                  <ActionButtonText>Add to cart</ActionButtonText>
+                </View>
               </ActionButton>
             </Product>
           </ProductContainer>
