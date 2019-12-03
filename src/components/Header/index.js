@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import logo from '../../assets/images/logo.png';
 
-import { Container, Logo } from './styles';
+import { Container, Logo, CartContainer, CartSize } from './styles';
 
-class Header extends Component {
-  render() {
-    return (
-      <Container>
-        <Logo source={logo} resizeMode="contain" />
-        <Icon name="shopping-basket" size={30} color="#fff" />
-      </Container>
-    );
-  }
+function Header() {
+  return (
+    <Container>
+      <Logo source={logo} resizeMode="contain" />
+      <CartContainer>
+        <Icon name="shopping-basket" size={35} color="#fff" />
+        <CartSize>1</CartSize>
+      </CartContainer>
+    </Container>
+  );
 }
 
 export default Header;

@@ -89,6 +89,13 @@
       "price": 219.9,
       "rarity": "Epic",
       "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/3/3d/Icon_10%29.png/256px-Icon_10%29.png?version=4765fc4be7c2c86958c22c4d876260df"
+    },
+    {
+      "id": 10,
+      "title": "The Brat",
+      "price": 219.9,
+      "rarity": "Rare",
+      "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/6/67/The_Brat.png/256px-The_Brat.png?version=01a5d08dbcf2e858536afb22f41e38d9"
     }
   ]
 }

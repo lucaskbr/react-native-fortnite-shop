@@ -26,7 +26,6 @@ export const ProductContainer = styled.View`
 `;
 
 const handleRarityColor = rarity => {
-  console.tron.log(`color -> ${rarity}`);
   switch (rarity) {
     case 'Epic':
       return '#CB37F1';
@@ -104,5 +103,6 @@ export const ActionButton = styled(RectButton)`
 
 export const ActionButtonText = styled.Text`
   font-size: 20px;
+  text-transform: uppercase;
   color: #fff;
 `;

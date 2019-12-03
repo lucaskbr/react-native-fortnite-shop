@@ -15,3 +15,18 @@ export const Logo = styled.Image`
   width: 100%;
   height: 27;
 `;
+
+export const CartContainer = styled.View``;
+
+export const CartSize = styled.Text`
+  color: #fff;
+  font-size: 15px;
+  position: absolute;
+  right: -10px;
+  background: red;
+  border: 1px solid red;
+  border-radius: 50px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+`;

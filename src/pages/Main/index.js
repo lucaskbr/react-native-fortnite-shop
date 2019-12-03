@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {
@@ -18,77 +18,72 @@ import {
 
 import api from '../../services/api';
 
-class Main extends Component {
-  /* static navigationOptions = {
+/* static navigationOptions = {
     // headerTitle instead of title
     headerTitle: () => <Header />,
   }; */
 
-  state = {
-    products: [],
-  };
+function Main() {
+  const [products, setProducts] = useState([]);
 
-  async componentDidMount() {
-    const response = await api.get('/products');
+  useEffect(() => {
+    async function fetchData() {
+      const response = await api.get('/products');
+      setProducts(response.data);
+    }
 
-    this.setState({
-      products: response.data,
-    });
-  }
+    fetchData();
+  }, []);
 
-  handleRarityStars = rarity => {
+  function handleRarityStars(rarity) {
     switch (rarity) {
       case 'Epic':
-        return [1, 2, 3];
+        return Array(3).fill('');
       case 'Legendary':
-        return [1, 2];
+        return Array(2).fill('');
       case 'Rare':
-        return [1];
+        return Array(1).fill('');
       case 'Uncommon':
         return [];
       default:
         return '#eee';
     }
-  };
-
-  render() {
-    const { products } = this.state;
-
-    return (
-      <Container>
-        <ProductList
-          data={products}
-          key={item => item.id}
-          keyExtractor={item => item.id}
-          renderItem={({ item }) => (
-            <ProductContainer>
-              <Product rarity={item.rarity}>
-                <ProductImage
-                  source={{
-                    uri: item.image,
-                  }}
-                />
-                <ProductTitle>{item.title}</ProductTitle>
-                <ProductInfo>
-                  <ProductPrice>{item.price}</ProductPrice>
-                  <RarityBadge rarity={item.rarity}>
-                    <RarityText>{item.rarity}</RarityText>
-                    {this.handleRarityStars(item.rarity).map(star => (
-                      <Icon name="star" size={12} color="#fff" />
-                    ))}
-                  </RarityBadge>
-                </ProductInfo>
-
-                <ActionButton>
-                  <ActionButtonText>Add to cart</ActionButtonText>
-                </ActionButton>
-              </Product>
-            </ProductContainer>
-          )}
-        />
-      </Container>
-    );
   }
+
+  return (
+    <Container>
+      <ProductList
+        data={products}
+        key={item => item.id}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <ProductContainer>
+            <Product rarity={item.rarity}>
+              <ProductImage
+                source={{
+                  uri: item.image,
+                }}
+              />
+              <ProductTitle>{item.title}</ProductTitle>
+              <ProductInfo>
+                <ProductPrice>{item.price}</ProductPrice>
+                <RarityBadge rarity={item.rarity}>
+                  <RarityText>{item.rarity}</RarityText>
+                  {handleRarityStars(item.rarity).map(() => (
+                    <Icon name="star" size={12} color="#fff" />
+                  ))}
+                </RarityBadge>
+              </ProductInfo>
+
+              <ActionButton>
+                <ActionButtonText>Add to cart</ActionButtonText>
+              </ActionButton>
+            </Product>
+          </ProductContainer>
+        )}
+      />
+    </Container>
+  );
 }
 
 export default Main;
