@@ -10,7 +10,7 @@ function Header() {
     <Container>
       <Logo source={logo} resizeMode="contain" />
       <CartContainer>
-        <Icon name="shopping-basket" size={35} color="#fff" />
+        <Icon name="shopping-basket" size={30} color="#fff" />
         <CartSize>1</CartSize>
       </CartContainer>
     </Container>

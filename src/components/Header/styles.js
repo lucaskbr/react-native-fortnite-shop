@@ -5,7 +5,7 @@ export const Container = styled.View`
   background: #9a24d4;
   padding: 20px;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   max-height: 60px;
 `;
@@ -13,7 +13,7 @@ export const Container = styled.View`
 export const Logo = styled.Image`
   flex: 1;
   width: 100%;
-  height: 27;
+  height: 24;
 `;
 
 export const CartContainer = styled.View``;
