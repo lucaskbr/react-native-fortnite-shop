@@ -3,11 +3,7 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: [
-    'airbnb',
-    'prettier',
-    'prettier/react'
-  ],
+  extends: ['airbnb', 'prettier', 'prettier/react'],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -20,24 +16,23 @@ module.exports = {
     sourceType: 'module',
   },
   parser: 'babel-eslint',
-  plugins: [
-    'react',
-    'prettier'
-  ],
+  plugins: ['react', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
       'warn',
       {
-        extensions: ['.jsx', '.js']
-      }
+        extensions: ['.jsx', '.js'],
+      },
     ],
     'import/prefer-default-export': 'off',
-    'react/prefer-stateless-function': 'off'
+    'react/prefer-stateless-function': 'off',
+    'no-param-reassign': 'off',
+    'react/static-property-placement': 'off',
   },
-  'globals': {
-    '__CLIENT__': true,
-    '__SERVER__': true,
-    '__DEV__': true
-  }
+  globals: {
+    __CLIENT__: true,
+    __SERVER__: true,
+    __DEV__: true,
+  },
 };

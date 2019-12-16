@@ -15,10 +15,12 @@ import './config/ReactotronConfig';
 import Routes from './routes';
 import store from './store';
 
+console.disableYellowBox = true;
+
 function App() {
   return (
     <Provider store={store}>
-      <StatusBar backgroundColor="#9A24D4" />
+      <StatusBar backgroundColor="#541BBD" barStyle="" />
       <Routes />
     </Provider>
   );

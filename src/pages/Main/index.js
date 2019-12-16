@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
   Container,
@@ -15,6 +15,7 @@ import {
   ProductTitle,
   ProductImage,
   ActionButton,
+  ActionButtonQuantity,
   ActionButtonText,
 } from './styles';
 
@@ -22,19 +23,28 @@ import api from '../../services/api';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
-/* static navigationOptions = {
-    // headerTitle instead of title
-    headerTitle: () => <Header />,
-  }; */
+import { formatPrice } from '../../util/format';
 
 function Main() {
+  const productsQuantityInCart = useSelector(state => {
+    return state.cart.reduce((items, product) => {
+      items[product.id] = product.amount;
+      return items;
+    }, {});
+  });
+
   const dispatch = useDispatch();
+
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       const response = await api.get('/products');
-      setProducts(response.data);
+      const productsData = response.data.map(product => ({
+        ...product,
+        priceFormatted: formatPrice(Number(product.price)),
+      }));
+      setProducts(productsData);
     }
 
     fetchData();
@@ -56,8 +66,7 @@ function Main() {
   }
 
   function handleAddToCart(id) {
-    console.tron.log(`Add to cart -> ${id}`);
-    dispatch(CartActions.addToCart(id));
+    dispatch(CartActions.addToCartRequest(id));
   }
 
   return (
@@ -76,7 +85,7 @@ function Main() {
               />
               <ProductTitle>{item.title}</ProductTitle>
               <ProductInfo>
-                <ProductPrice>{item.price}</ProductPrice>
+                <ProductPrice>{item.priceFormatted}</ProductPrice>
                 <RarityBadge rarity={item.rarity}>
                   <RarityText>{item.rarity}</RarityText>
                   {handleRarityStars(item.rarity).map(() => (
@@ -86,9 +95,11 @@ function Main() {
               </ProductInfo>
 
               <ActionButton onPress={() => handleAddToCart(item.id)}>
-                <View accessible>
-                  <ActionButtonText>Add to cart</ActionButtonText>
-                </View>
+                <ActionButtonQuantity>
+                  <Icon name="cart-arrow-down" size={15} color="#fff" />
+                  {productsQuantityInCart[item.id] || 0}
+                </ActionButtonQuantity>
+                <ActionButtonText>Add to cart</ActionButtonText>
               </ActionButton>
             </Product>
           </ProductContainer>

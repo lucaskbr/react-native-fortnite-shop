@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
+import { darken } from 'polished';
 
 export const Container = styled.View`
-  background: #4d067c;
+  background: #541bbd;
   height: 100%;
   width: 100%;
   flex: 1;
@@ -93,15 +94,28 @@ export const RarityText = styled.Text`
 `;
 
 export const ActionButton = styled(RectButton)`
-  background: #0cca98;
+  background: #00b387;
   height: 36px;
   width: 100%;
   margin: 10px 0 0 0;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 `;
 
+export const ActionButtonQuantity = styled.Text`
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  border-style: solid;
+  border-right-color: #fff;
+  border-right-width: 1px;
+  padding-right: 15px;
+`;
+
 export const ActionButtonText = styled.Text`
+  padding-left: 15px;
   font-size: 20px;
   text-transform: uppercase;
   color: #fff;

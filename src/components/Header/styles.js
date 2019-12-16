@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  background: #9a24d4;
+  background: #541bbd;
   padding: 20px;
   flex-direction: row;
   justify-content: space-around;
@@ -19,14 +19,15 @@ export const Logo = styled.Image`
 export const CartContainer = styled.View``;
 
 export const CartSize = styled.Text`
-  color: #fff;
-  font-size: 15px;
-  position: absolute;
-  right: -10px;
   background: red;
   border: 1px solid red;
   border-radius: 50px;
-  width: 20px;
-  height: 20px;
+  color: #fff;
+  font-size: 12px;
+  min-width: 25px;
+  padding: 3px 1px;
+  position: absolute;
+  right: -15px;
   text-align: center;
+  top: -5px;
 `;

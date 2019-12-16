@@ -22,28 +22,44 @@
     },
     {
       "id": 6,
-      "amount": 10
+      "amount": 6
+    },
+    {
+      "id": 7,
+      "amount": 3
+    },
+    {
+      "id": 8,
+      "amount": 1
+    },
+    {
+      "id": 9,
+      "amount": 2
+    },
+    {
+      "id": 10,
+      "amount": 4
     }
   ],
   "products": [
     {
       "id": 1,
       "title": "Beef Boss",
-      "price": 179.9,
+      "price": 25.1,
       "rarity": "Epic",
       "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/2/2f/New_Beef_Boss.png/256px-New_Beef_Boss.png?version=ce5cd3951986c35dbf11c97a89570219"
     },
     {
       "id": 2,
       "title": "Bronto",
-      "price": 139.9,
+      "price": 15.0,
       "rarity": "Rare",
       "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/6/62/BrontoIcon.png/256px-BrontoIcon.png?version=8d6e7c5431a16884bd68e424bec00c6a"
     },
     {
       "id": 3,
       "title": "Raven",
-      "price": 179.9,
+      "price": 19.9,
       "rarity": "Legendary",
       "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/6/66/Raven.png/256px-Raven.png?version=22a083a66e7775898fad504aff0b3af5"
     },
@@ -51,49 +67,49 @@
     {
       "id": 4,
       "title": "Big Mouth",
-      "price": 139.9,
+      "price": 26.9,
       "rarity": "Epic",
       "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/5/55/Big_Mouth.png/256px-Big_Mouth.png?version=6c6c563658e8d4586a76302215fede35"
     },
     {
       "id": 5,
       "title": "Cuddle Team Leader",
-      "price": 219.9,
+      "price": 17.5,
       "rarity": "Legendary",
       "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/e/ea/New_Cuddle_Team_Leader.png/256px-New_Cuddle_Team_Leader.png?version=024afb02ad9b40257430e1871e92adf4"
     },
     {
       "id": 6,
       "title": "Toy Trooper",
-      "price": 179.9,
+      "price": 10.0,
       "rarity": "Uncommon",
       "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/c/c1/ToyTrooperSkin.png/256px-ToyTrooperSkin.png?version=67001b7ce4de96a544378c9933b04ed3"
     },
     {
       "id": 7,
       "title": "Hollowhead",
-      "price": 179.9,
+      "price": 19.9,
       "rarity": "Epic",
       "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/c/c6/New_Hollowhead.png/256px-New_Hollowhead.png?version=bbe47d365aa4d29027a67aff1be960f1"
     },
     {
       "id": 8,
       "title": "Inferno",
-      "price": 179.9,
+      "price": 16.3,
       "rarity": "Legendary",
       "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/4/4d/New_Inferno.png/256px-New_Inferno.png?version=3caa4064e1711565b2f3822c49137719"
     },
     {
       "id": 9,
       "title": "Bash",
-      "price": 219.9,
+      "price": 29.9,
       "rarity": "Epic",
       "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/3/3d/Icon_10%29.png/256px-Icon_10%29.png?version=4765fc4be7c2c86958c22c4d876260df"
     },
     {
       "id": 10,
       "title": "The Brat",
-      "price": 219.9,
+      "price": 11.9,
       "rarity": "Rare",
       "image": "https://gamepedia.cursecdn.com/fortnite_gamepedia/thumb/6/67/The_Brat.png/256px-The_Brat.png?version=01a5d08dbcf2e858536afb22f41e38d9"
     }
